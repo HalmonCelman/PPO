@@ -1,7 +1,5 @@
 #include "stepper.h"
 
-extern Led MyLed;
-
 Stepper::Stepper(unsigned char initialLedPosition){
 	LedCtr = initialLedPosition;
 	MyLed.On(initialLedPosition);
