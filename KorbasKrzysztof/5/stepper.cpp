@@ -1,6 +1,6 @@
 #include "stepper.h"
 
-extern Led My_Led;
+extern Led MyLed;
 
 void Stepper::Step(enum Step eStep){
 	if(eStep == LEFT){

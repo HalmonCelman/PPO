@@ -1,4 +1,3 @@
-#include "led.h"
 #include "stepper.h"
 
 void Delay(int iTimeInMs){
@@ -8,15 +7,12 @@ void Delay(int iTimeInMs){
 	for (iCycle = 0; iCycle < iNumberOfCycles; iCycle++) {}
 }
 
-Led MyLed;
-Stepper MyStepper;
+Stepper MyStepper(2);
 
 int main(void)
 {
-	MyLed.Init();
-
 	while(1){
-		Delay(100);
+		Delay(500);
 		MyStepper.StepLeft();
 	}
 }

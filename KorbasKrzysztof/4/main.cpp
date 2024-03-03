@@ -8,13 +8,13 @@ void Delay(int iTimeInMs){
 	for (iCycle = 0; iCycle < iNumberOfCycles; iCycle++) {}
 }
 
-Led My_Led;
-Stepper My_Stepper;
+Led MyLed;
+Stepper MyStepper;
 
 int main(void)
 {
 	while(1){
 		Delay(100);
-		My_Stepper.StepLeft();
+		MyStepper.StepLeft();
 	}
 }

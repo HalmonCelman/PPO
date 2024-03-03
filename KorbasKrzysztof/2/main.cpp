@@ -9,11 +9,11 @@ void Delay(int iTimeInMs){
 
 int main(void)
 {
-	Led My_Led;
-	My_Led.Init();
+	Led MyLed;
+	MyLed.Init();
 
 	while(1){
 		Delay(100);
-		My_Led.StepLeft();
+		MyLed.StepLeft();
 	}
 }
