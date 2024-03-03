@@ -1,7 +1,9 @@
 #ifndef STEPPER_H
 #define STEPPER_H
 
-class Stepper{
+#include "led.h"
+
+class Stepper: private Led{ 
 	private:
 		enum Step{LEFT,RIGHT};
 		unsigned char LedCtr;

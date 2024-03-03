@@ -1,3 +1,6 @@
+#ifndef STEPPER_H
+#define STEPPER_H
+
 class Stepper{
 	private:
 		enum Step{LEFT,RIGHT};
@@ -8,3 +11,5 @@ class Stepper{
 	private:
 		void Step(enum Step eStep);
 };
+
+#endif
