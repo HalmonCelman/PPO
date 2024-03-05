@@ -8,10 +8,9 @@ void Delay(int iTimeInMs){
 	for (iCycle = 0; iCycle < iNumberOfCycles; iCycle++) {}
 }
 
-Stepper MyStepper;
-
 int main(void)
 {
+	Stepper MyStepper;
 	Keyboard MyKeyboard;
 
 	while(1){

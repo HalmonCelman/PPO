@@ -7,10 +7,9 @@ void Delay(int iTimeInMs){
 	for (iCycle = 0; iCycle < iNumberOfCycles; iCycle++) {}
 }
 
-Stepper MyStepper(2);
-
 int main(void)
 {
+	Stepper MyStepper(2);
 	while(1){
 		Delay(500);
 		MyStepper.StepLeft();
