@@ -3,17 +3,17 @@
 
 #include "ledinv.h"
 
-class Stepper{ 
-	private:
-		enum Step{LEFT,RIGHT};
-		unsigned char LedCtr;
-		Led * pMyLed;
+class Stepper{
 	public:
 		void SetLed(Led *pLedObject);
 		void StepRight(void);
 		void StepLeft(void);
 	private:
+		enum Step{LEFT,RIGHT};
 		void Step(enum Step eStep);
+
+		unsigned char LedCtr;
+		Led * pMyLed;
 };
 
 #endif

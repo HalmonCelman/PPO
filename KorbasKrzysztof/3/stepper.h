@@ -2,14 +2,14 @@
 #define STEPPER_H
 
 class Stepper{
-	private:
-		enum Step{LEFT,RIGHT};
-		unsigned char LedCtr;
 	public:
 		void StepRight(void);
 		void StepLeft(void);
 	private:
+		enum Step{LEFT,RIGHT};
 		void Step(enum Step eStep);
+		
+		unsigned char LedCtr;
 };
 
 #endif

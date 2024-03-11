@@ -36,16 +36,16 @@ void Led::On(unsigned char ucLedIndex)
 
 void Led::Step(enum Step eStep){
 	if(eStep == LEFT){
-		LedCtr--;
-		LedCtr = LedCtr % 4;
-		On(LedCtr);
+		LedCtr--;	
 	}
 	else if(eStep == RIGHT){
 		LedCtr++;
-		LedCtr = LedCtr % 4;
-		On(LedCtr);
 	}else{
+		return;
 	}
+	
+	LedCtr = LedCtr % 4;
+	On(LedCtr);
 }
 
 void Led::StepLeft(void){

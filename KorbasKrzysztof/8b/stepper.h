@@ -4,15 +4,15 @@
 #include "led.h"
 
 class Stepper{ 
-	private:
-		enum Step{LEFT,RIGHT};
-		unsigned char LedCtr;
-		Led MyLed;
 	public:
 		void StepRight(void);
 		void StepLeft(void);
 	private:
+		enum Step{LEFT,RIGHT};
 		void Step(enum Step eStep);
+
+		unsigned char LedCtr;
+		Led MyLed;
 };
 
 #endif

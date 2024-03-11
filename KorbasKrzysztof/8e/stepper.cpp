@@ -7,15 +7,15 @@ void Stepper::SetLed(Led *pLedObject){
 void Stepper::Step(enum Step eStep){
 	if(eStep == LEFT){
 		LedCtr--;
-		LedCtr = LedCtr % 4;
-		pMyLed->On(LedCtr);
 	}
 	else if(eStep == RIGHT){
 		LedCtr++;
-		LedCtr = LedCtr % 4;
-		pMyLed->On(LedCtr);
-		}else{
+	}else{
+		return;
 	}
+
+	LedCtr = LedCtr % 4;
+	pMyLed->On(LedCtr);
 }
 
 void Stepper::StepLeft(void){
