@@ -3,18 +3,19 @@
 Te repozytorium zawiera moje propozycje rozwiązania zadanej w instrukcji refaktoryzacji kodu
 na chwilę obecną te rozwiązania **nie zostały** skonsultowane z prowadzącym więc mogą być błędne
 
-## Uruchamianie C++ w keilu
-Prawdopodobnie próbując napisać klasę Led w keilu natknąłeś się na problem że keil nie rozpoznał słowa "class" - trzeba mu powiedzieć że chcemy korzystać z C++
+## Odnośnie operatora new - zadanie 8e i 8f
+Kiedy już napiszemy nasz wspaniały program i spróbujemy go uruchomić w debuggerze keila może się okazać że debugger się "zawiesza" już w pliku Startup.s
 
-- po uruchomieniu keila i otwarciu projektu należy wybrać "różdżkę"
+Jest to spowodowane dwoma rzeczami:
+1. używamy operatora **new** więc pamięć próbuje być włożona na stertę
+2. rozmiar sterty w pliku Startup.s który został dostarczony jest ustawiony na 0
 
-![First step](keilcppstep1.jpg "magic wand")
-
-- następnie wybrać zakładkę C/C++
-- w polu "Misc Controls" wpisać `--cpp`
-
-![Second step](keilcppstep2.jpg "--cpp")
-
-- wcisnąć OK i gotowe - keil powinien być w stanie teraz pracować z C++
+***Możliwe rozwiązanie:***
+- otworzyć plik Startup.s i znaleźć linijkę:
+```
+Heap_Size       EQU     0x00000000
+```
+- po **EQU** zamiast zer wpisać wartość jaką nam zajmą rzeczy na stercie (np. 0x000000FF)
+- skompilować ponownie projekt
 
 ## *Ostrzeżenie: przy kopiowaniu folderu po ponownym otwarciu projektu lepiej zamknąć wszystkie pliki .h w keilu i otworzyć na nowo, dzięki temu unikniemy sytuacji, że zmodyfikujemy plik tam gdzie nie chcemy*

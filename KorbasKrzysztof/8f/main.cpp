@@ -16,9 +16,9 @@ int main(void){
 	Led * pLed;
 
 	if(!(IO0PIN & BUTTON4_bm)){
-		pLed = new LedPos;
-	}else{
 		pLed = new LedInv;
+	}else{
+		pLed = new LedPos;
 	}
 	MyStepper.SetLed(pLed);
 	

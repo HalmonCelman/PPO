@@ -13,12 +13,13 @@ int main(void)
 {
 	Stepper MyStepper;
 	Led * pLed;
-
+	
 	if(!(IO0PIN & BUTTON4_bm)){
-		pLed = new Led;
-	}else{
 		pLed = new LedInv;
+	}else{
+		pLed = new Led;
 	}
+	
 	MyStepper.SetLed(pLed);
 	
 	Keyboard MyKeyboard;
