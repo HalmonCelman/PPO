@@ -1,3 +1,4 @@
+#include <LPC213X.H>
 #include "stepper.h"
 #include "keyboard.h"
 #include "ledpos.h"
@@ -11,19 +12,17 @@ void Delay(int iTimeInMs){
 }
 
 int main(void){
-	
 	Stepper MyStepper;
-	
-	LedPos MyLedPos;
-	LedInv MyLedInv;
+	Led * pLed;
+
+	if(!(IO0PIN & BUTTON4_bm)){
+		pLed = new LedPos;
+	}else{
+		pLed = new LedInv;
+	}
+	MyStepper.SetLed(pLed);
 	
 	Keyboard MyKeyboard;
-	
-	if(MyKeyboard.eRead() == BUTTON_4){
-		MyStepper.SetLed(&MyLedInv);
-	}else{
-		MyStepper.SetLed(&MyLedPos);
-	}
 
 	while(1){
 		Delay(500);

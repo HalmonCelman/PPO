@@ -398,11 +398,6 @@
               <FilePath>.\Startup.s</FilePath>
             </File>
             <File>
-              <FileName>keyboard.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\keyboard.c</FilePath>
-            </File>
-            <File>
               <FileName>led.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\led.cpp</FilePath>

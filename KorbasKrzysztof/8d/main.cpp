@@ -1,3 +1,4 @@
+#include <LPC213X.H>
 #include "stepper.h"
 #include "keyboard.h"
 
@@ -11,14 +12,10 @@ void Delay(int iTimeInMs){
 int main(void)
 {
 	Stepper MyStepper;
+	MyStepper.SetMode(!(IO0PIN & BUTTON4_bm));
+	
 	Keyboard MyKeyboard;
 	
-	if(MyKeyboard.eRead() == BUTTON_4){
-		MyStepper.SetMode(1);
-	}else{
-		MyStepper.SetMode(0);
-	}
-
 	while(1){
 		Delay(500);
 		switch(MyKeyboard.eRead()){
