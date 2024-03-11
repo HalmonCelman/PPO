@@ -13,7 +13,8 @@ class Stepper{
 		void Step(enum Step eStep);
 
 		unsigned char LedCtr;
-		Led * pMyLed;
+		unsigned char ucInversion;
+		Led *pLed;
 };
 
 #endif

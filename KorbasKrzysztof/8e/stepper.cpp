@@ -1,7 +1,7 @@
 #include "stepper.h"
 
 void Stepper::SetLed(Led *pLedObject){
-	pMyLed = pLedObject;
+	pLed = pLedObject;
 }
 
 void Stepper::Step(enum Step eStep){
@@ -15,7 +15,11 @@ void Stepper::Step(enum Step eStep){
 	}
 
 	LedCtr = LedCtr % 4;
-	pMyLed->On(LedCtr);
+	if(1 == ucInversion){
+		pLed->On(LedCtr);
+	} else{
+		pLed->On(LedCtr);
+	}
 }
 
 void Stepper::StepLeft(void){

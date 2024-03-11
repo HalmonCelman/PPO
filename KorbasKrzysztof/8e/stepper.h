@@ -1,7 +1,7 @@
 #ifndef STEPPER_H
 #define STEPPER_H
 
-#include "ledinv.h"
+#include "led.h"
 
 class Stepper{
 	public:
@@ -13,7 +13,8 @@ class Stepper{
 		void Step(enum Step eStep);
 
 		unsigned char LedCtr;
-		Led * pMyLed;
+		unsigned char ucInversion;
+		Led *pLed;
 };
 
 #endif

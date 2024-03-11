@@ -1,4 +1,3 @@
-#include <LPC21xx.H>
 #include "stepper.h"
 #include "keyboard.h"
 
@@ -9,12 +8,18 @@ void Delay(int iTimeInMs){
 	for (iCycle = 0; iCycle < iNumberOfCycles; iCycle++) {}
 }
 
-unsigned char ucInversion = !(IO0PIN & BUTTON4_bm);
+unsigned char ucInversion;
 
 int main(void)
 {
-	Stepper MyStepper;
 	Keyboard MyKeyboard;
+	if( MyKeyboard.eRead() == BUTTON_4 ){
+		ucInversion = 1;
+	}else{
+		ucInversion = 0;
+	}
+	
+	Stepper MyStepper;
 	
 	while(1){
 		Delay(500);
