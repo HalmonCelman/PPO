@@ -15,11 +15,7 @@ void Stepper::Step(enum Step eStep){
 	}
 
 	LedCtr = LedCtr % 4;
-	if(1 == ucInversion){
-		pLed->On(LedCtr);
-	} else{
-		pLed->On(LedCtr);
-	}
+	pLed->On(LedCtr);
 }
 
 void Stepper::StepLeft(void){
