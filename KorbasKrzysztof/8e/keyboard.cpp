@@ -1,6 +1,11 @@
 #include <LPC21xx.H>
 #include "Keyboard.h"
 
+#define BUTTON1_bm (1<<4)
+#define BUTTON2_bm (1<<5)
+#define BUTTON3_bm (1<<6)
+#define BUTTON4_bm (1<<7)
+
 Keyboard::Keyboard(void){
 	IO0DIR = IO0DIR & BUTTON1_bm & BUTTON2_bm & BUTTON3_bm & BUTTON4_bm;
 }
